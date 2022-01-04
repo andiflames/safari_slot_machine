@@ -11,19 +11,34 @@ body {
 }
 
 /* ==== Header Styles ==== */
+#header {
+    background-image: url(../images/safari.png);
+    background-color: #000;
+    height: 100px;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: contain;
+}
 #header h1, #header div {
     display: inline-block;
     margin: auto;
+    color: #000;
+    -webkit-text-stroke: 1.5px #fff;
+    text-stroke: 1.5px #fff;
 }
 
 #header h1 {
     width: 75%;
+    font-size: 75px;
     text-align: center;
 }
 
 #header div {
     width: 23%;
+    font-size: 28px;
     text-align: right;
+    background: #000;
+    padding-left: -5px;
 }
 
 /* ==== Spinner Styles ==== */
@@ -34,7 +49,7 @@ body {
     width: 32%;
     display: inline-block;
     margin: auto;
-    background-image: url(images/giraffe.png);
+    background-image: url(../images/baby-giraffe.png);
     background-color: #fff;
     height: 200px;
     background-position: center;
