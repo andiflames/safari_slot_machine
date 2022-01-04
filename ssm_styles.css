@@ -1,0 +1,67 @@
+/* ==== Body Styles ==== */
+body {
+    background-color: aquamarine;
+}
+
+.mainRow {
+    width: 100%;
+    display: block;
+    margin: 10px auto;
+    background-color: #fff;
+}
+
+/* ==== Header Styles ==== */
+#header h1, #header div {
+    display: inline-block;
+    margin: auto;
+}
+
+#header h1 {
+    width: 75%;
+    text-align: center;
+}
+
+#header div {
+    width: 23%;
+    text-align: right;
+}
+
+/* ==== Spinner Styles ==== */
+#slot-spinners {
+    width: 75%;
+}
+.spinner {
+    width: 32%;
+    display: inline-block;
+    margin: auto;
+    background-image: url(images/giraffe.png);
+    background-color: #fff;
+    height: 200px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+/* ==== Bet Row Styles ==== */
+#betRow div {
+    display: inline-block;
+    margin: auto;
+    width: 32%;
+}
+
+#betRow div .bets {
+    width: 49%;
+    text-align: center;
+    background-color: gray;
+    margin: 1px;
+    min-height: 20px;
+    color: #fff;
+}
+
+#spin {
+    text-align: center;
+}
+
+#results {
+    text-align: center;
+}

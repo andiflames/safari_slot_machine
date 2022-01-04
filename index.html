@@ -9,25 +9,29 @@
     <title>Safari Slot Machine</title>
 </head>
 <body>
-    <header>
+    <div id="header" class="mainRow">
         <h1>Safari Slot Machine</h1>
-    </header>
-    <div id="totalCredit">0</div>
-    <div class="slot-spinners">
-        <div id="spinner1"></div>
-        <div id="spinner2"></div>
-        <div id="spinner3"></div>
+        <div id="totalCredit">Total Credits: <span id="credits">0</span></div>
     </div>
-    <div id="betField">
-        <div class="bets">1</div>
-        <div class="bets">2</div>
-        <div class="bets">5</div>
-        <div class="bets">10</div>
+    <div id="slot-spinners" class="mainRow">
+        <div class="spinner" id="spinner1"></div>
+        <div class="spinner" id="spinner2"></div>
+        <div class="spinner" id="spinner3"></div>
     </div>
-    <div id="spin"></div>
-    <div id="results">Results</div>
-    <div id="cashOut">Cash Out</div>
-    <div id="payoutSchedule"></div>
+    <div id="betRow" class="mainRow">
+        <div id="betField">
+            <div class="bets">1</div>
+            <div class="bets">2</div>
+            <div class="bets">5</div>
+            <div class="bets">10</div>
+        </div>
+        <div id="spin">Spin</div>
+        <div id="results">Results</div>
+    </div>
+    <div id="outRow" class="mainRow">
+        <div id="cashOut">Cash Out</div>
+        <div id="payoutSchedule"></div>
+    </div>
     <!--JavaScript-->
     <script src="ssm.js"></script>
 </body>
