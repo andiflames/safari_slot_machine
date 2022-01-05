@@ -17,13 +17,16 @@ const spinner3 = document.getElementById('spinner3');
 const spinBtn = document.querySelector("#spinBtn");
 let activeBet = document.getElementsByClassName("active-bet")[0];
 const creditsDisplay = document.getElementById("credits");
+const resultsArea = document.getElementById('results');
 
 // Credits
 let currentCredits = 0;
 
 // Event Listeners  
 spinBtn.addEventListener("click", () => {
-    executeSpin();
+    if (currentCredits >= parseInt(activeBet.textContent)) {
+        executeSpin();
+    }
 })
 
 document.querySelectorAll('.bets').forEach(item => {
@@ -46,6 +49,13 @@ function arrayEquals(a, b) {
     return Array.isArray(a) && Array.isArray(b) &&
       a.length === b.length &&
       a.every((val, index) => val === b[index]);
+  }
+
+  function gameOverCheck() {
+      if (currentCredits < 1) {
+          alert("You're Out of Credits! Game Over.");
+          initializeGame();
+      }
   }
 
 function calculateScore(results) {
@@ -72,10 +82,12 @@ function calculateScore(results) {
 }
 
 function updateResultsArea(winnings) {
-    // if winnings > 0
-    // "You won X Credits!"
-    // else
-    // "You lost your bet of X credits..."
+    if (winnings > 0) {
+        resultsArea.textContent = `You've won ${winnings} credit(s)!`
+    }
+    else {
+        resultsArea.textContent = `You've lost your bet of ${activeBet.textContent} credit(s).`
+    }
 }
 
 function executeSpin() {
@@ -92,6 +104,7 @@ function executeSpin() {
     winnings = calculateScore(spinResult);
     updateCredits(currentCredits + winnings);
     updateResultsArea(winnings);
+    gameOverCheck();
 }
 
 function setAsActiveBet(betOption) {
@@ -103,6 +116,9 @@ function setAsActiveBet(betOption) {
 
 function initializeGame(){
     updateCredits(50);
+    changeSpinnerBackground(spinner1, giraffeImageUrl);
+    changeSpinnerBackground(spinner2, giraffeImageUrl);
+    changeSpinnerBackground(spinner3, giraffeImageUrl); 
  }
 
 initializeGame();
