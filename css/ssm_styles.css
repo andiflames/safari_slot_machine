@@ -10,7 +10,7 @@ body {
     display: flex;
     -webkit-flex-wrap: nowrap;
     flex-wrap: nowrap;
-    margin: 10px auto;
+    margin: 20px auto;
     text-align: center;
 }
 
@@ -26,9 +26,9 @@ body {
 #header h1, #header div {
     display: inline-block;
     margin: auto;
-    color: #000;
-    -webkit-text-stroke: 1.5px #fff;
-    text-stroke: 1.5px #fff;
+    color: #fff;
+    -webkit-text-stroke: 1.5px #000;
+    text-stroke: 1.5px #000;
 }
 
 #header h1 {
@@ -39,9 +39,9 @@ body {
 
 #header div {
     width: 23%;
-    font-size: 28px;
+    font-size: 1.7em;
     text-align: right;
-    background: #000;
+    background: rgba(0, 0, 0, 0.5);
 }
 
 /* ==== Spinner Styles ==== */
@@ -117,4 +117,18 @@ body {
 
 #payoutSchedule img {
     width: 80%;
+}
+
+/* ==== Tablets and Mobile Devices Styles === */ 
+
+@media only screen and (max-width: 954px) {
+    #header h1 {
+        font-size: 2.3em;
+    }
+
+    #header div {
+        font-size: 1.2em;
+        background-color: #fff;
+        color: #000;
+    }
 }
