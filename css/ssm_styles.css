@@ -1,13 +1,17 @@
 /* ==== Body Styles ==== */
 body {
-    background-color: aquamarine;
+    background-color: #C2B280;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .mainRow {
     width: 100%;
-    display: block;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: nowrap;
+    flex-wrap: nowrap;
     margin: 10px auto;
-    background-color: #fff;
+    text-align: center;
 }
 
 /* ==== Header Styles ==== */
@@ -29,8 +33,8 @@ body {
 
 #header h1 {
     width: 75%;
-    font-size: 75px;
-    text-align: center;
+    font-size: 3em;
+    
 }
 
 #header div {
@@ -38,12 +42,12 @@ body {
     font-size: 28px;
     text-align: right;
     background: #000;
-    padding-left: -5px;
 }
 
 /* ==== Spinner Styles ==== */
 #slot-spinners {
     width: 75%;
+    background-color: #C2B280;
 }
 .spinner {
     width: 32%;
@@ -55,6 +59,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
+    border: 2px solid #000;
 }
 
 /* ==== Bet Row Styles ==== */
@@ -65,18 +70,51 @@ body {
 }
 
 #betRow div .bets {
-    width: 49%;
+    width: 48%;
     text-align: center;
     background-color: gray;
     margin: 1px;
+    padding: 10px 0px;
     min-height: 20px;
     color: #fff;
 }
 
+#betRow div .active-bet {
+    background-color: #E0D334;
+    color: #000;
+}
+
 #spin {
-    text-align: center;
+    font-size: 50px;
+    padding: 15px;
+    background-color: #9ED47E;
+    border-radius: 10px;
 }
 
 #results {
-    text-align: center;
+    background-color: #fff;
+    border: 2px solid #000;
+    height: 75px;
+}
+
+/* ==== Out Row Styles ==== */
+#outRow {
+    background-color: #dbd1b4;
+}
+
+#outRow div {
+    display: inline-block;
+    margin: auto;
+}
+
+#cashOut {
+    background-color: #999;
+    font-size: 40px;
+    justify-content: center;
+    border: 2px solid #000;
+    padding: 3px;
+}
+
+#payoutSchedule img {
+    width: 80%;
 }
