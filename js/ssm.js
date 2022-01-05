@@ -18,7 +18,9 @@ const spinBtn = document.querySelector("#spinBtn");
 let activeBet = document.getElementsByClassName("active-bet")[0];
 const creditsDisplay = document.getElementById("credits");
 const resultsArea = document.getElementById('results');
-
+const gameOver = document.getElementById('gameOver');
+const payoutSchedule = document.getElementById('payoutSchedule');
+const cashOut = document.getElementById('cashOut');
 
 // Credits
 let currentCredits = 0;
@@ -54,13 +56,10 @@ function arrayEquals(a, b) {
 
   function gameOverCheck() {
       if (currentCredits < 1) {
-          let gameOver = document.getElementById('gameOver');
+          payoutSchedule.style.display = "none";
+          cashOut.style.display = "none";
           gameOver.style.display = "block";
-          initializeGame();
       } 
-      else {
-          gameOver.style.display = "none";
-      }
   }
 
 function calculateScore(results) {
@@ -120,6 +119,7 @@ function setAsActiveBet(betOption) {
 }
 
 function initializeGame(){
+    gameOver.style.display = "none";
     updateCredits(50);
     changeSpinnerBackground(spinner1, giraffeImageUrl);
     changeSpinnerBackground(spinner2, giraffeImageUrl);
