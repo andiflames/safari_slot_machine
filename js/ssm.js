@@ -19,6 +19,7 @@ let activeBet = document.getElementsByClassName("active-bet")[0];
 const creditsDisplay = document.getElementById("credits");
 const resultsArea = document.getElementById('results');
 
+
 // Credits
 let currentCredits = 0;
 
@@ -53,8 +54,12 @@ function arrayEquals(a, b) {
 
   function gameOverCheck() {
       if (currentCredits < 1) {
-          alert("You're Out of Credits! Game Over.");
+          let gameOver = document.getElementById('gameOver');
+          gameOver.style.display = "block";
           initializeGame();
+      } 
+      else {
+          gameOver.style.display = "none";
       }
   }
 

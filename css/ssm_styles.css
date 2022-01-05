@@ -121,6 +121,11 @@ body {
     width: 80%;
 }
 
+/* ==== Game Over Styles ==== */
+#gameOver {
+    display: none;
+}
+
 /* ==== Tablets and Mobile Devices Styles === */ 
 
 @media only screen and (max-width: 954px) {
