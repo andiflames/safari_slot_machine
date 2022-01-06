@@ -85,6 +85,7 @@ body {
     color: #000;
 }
 
+/* Spin Button Styles */
 #spin button {
     margin: 5px;
     background-color: #9ED47E;
@@ -93,10 +94,12 @@ body {
     border-radius: 10px;
 }
 
+/* Results Area Styles */
 #results {
     background-color: #fff;
     border: 2px solid #000;
     height: 75px;
+    font-size: 2em;
 }
 
 /* ==== Out Row Styles ==== */
