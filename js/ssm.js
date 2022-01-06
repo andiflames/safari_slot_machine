@@ -150,6 +150,7 @@ function initializeGame(){
     cashOut.style.display = 'block';
     gameOver.style.display = 'none';
     spinBtn.innerHTML = 'Spin';
+    resultsArea.innerHTML = 'Results'
     gameEnded = false;
     updateCredits(50);
     changeSpinnerBackground(spinner1, giraffeImageUrl);
