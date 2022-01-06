@@ -2,15 +2,16 @@
 body {
     background-color: #C2B280;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    min-height: 100%;
 }
-
+/* ==== Main Row Class Styles ==== */
 .mainRow {
     width: 100%;
     display: -webkit-flex;
     display: flex;
     -webkit-flex-wrap: nowrap;
     flex-wrap: nowrap;
-    margin: 20px auto;
+    margin: 40px auto;
     text-align: center;
 }
 
@@ -80,21 +81,31 @@ body {
     color: #fff;
 }
 
+#betRow div .bets:hover,
+#betRow div .bets:focus {
+    cursor: pointer;
+}
+
 #betRow div .active-bet {
     background-color: #E0D334;
     color: #000;
 }
 
-/* Spin Button Styles */
+/* ==== Spin Button Styles ==== */
 #spin button {
     margin: 5px;
     background-color: #9ED47E;
-    font-size: 50px;
+    font-size: 3em;
     padding: 15px;
     border-radius: 10px;
 }
 
-/* Results Area Styles */
+#spinBtn:hover,
+#spinBtn:focus {
+    cursor: pointer;
+}
+
+/* ==== Results Area Styles ==== */
 #results {
     background-color: #fff;
     border: 2px solid #000;
@@ -111,12 +122,22 @@ body {
     margin: auto;
 }
 
+/* ==== Cash Out Styles ==== */
+#outRow #cashOut {
+    margin-left: 20px;
+}
+
 #cashOut {
     background-color: #999;
-    font-size: 40px;
+    font-size: 1.9em;
     justify-content: center;
     border: 2px solid #000;
     padding: 3px;
+}
+
+#cashOut:hover,
+#cashOut:focus {
+    cursor: pointer;
 }
 
 #payoutSchedule img {
@@ -146,12 +167,20 @@ body {
         margin: 0px 8px;
     }
 
+    #betRow, #outRow {
+        margin-top: 50px;
+    }
+
     #betRow div .bets {
         width: 37%;
     }
 
+    #spin button {
+        font-size: 2em;
+    }
+
     #cashOut {
-        font-size: 30px;
+        font-size: 1.4em;
     }
 }
 

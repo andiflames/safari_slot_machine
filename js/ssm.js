@@ -46,7 +46,7 @@ document.querySelectorAll('.bets').forEach(item => {
 });
 
 cashOut.addEventListener('click', () => {
-    alert(`You have won ${currentCredits} credit(s)!! Have a nice day!`)
+    alert(`You have won ${currentCredits} credits!! Thanks for playing!`)
     initializeGame();
 })
 
