@@ -38,6 +38,10 @@ document.querySelectorAll('.bets').forEach(item => {
     });
 });
 
+cashOut.addEventListener('click', () => {
+    console.log("CASH OUT !!!")
+})
+
 // Helper Function
 function changeSpinnerBackground(spinner, imgUrl) {
     spinner.style.backgroundImage = `url('${imgUrl}')`;
@@ -94,17 +98,23 @@ function updateResultsArea(winnings) {
     }
 }
 
-function executeSpin() {
-    let winnings = 0;
+function spinAndUpdate() {
     let spinOptions = Object.keys(imageOptions);
     let spin1index = Math.floor(Math.random() * (spinOptions.length));
     let spin2index = Math.floor(Math.random() * (spinOptions.length));
     let spin3index = Math.floor(Math.random() * (spinOptions.length));
     let spinResult = [spinOptions[spin1index], spinOptions[spin2index], spinOptions[spin3index]]
-    updateCredits(currentCredits - parseInt(activeBet.textContent));
     changeSpinnerBackground(spinner1, imageOptions[spinOptions[spin1index]]);
     changeSpinnerBackground(spinner2, imageOptions[spinOptions[spin2index]]);
-    changeSpinnerBackground(spinner3, imageOptions[spinOptions[spin3index]]); 
+    changeSpinnerBackground(spinner3, imageOptions[spinOptions[spin3index]]);
+    return spinResult
+}
+
+function executeSpin() {
+    let spinResult;
+    let winnings = 0;
+    updateCredits(currentCredits - parseInt(activeBet.textContent));
+    spinResult = spinAndUpdate();
     winnings = calculateScore(spinResult);
     updateCredits(currentCredits + winnings);
     updateResultsArea(winnings);
@@ -115,7 +125,6 @@ function setAsActiveBet(betOption) {
     activeBet.classList.remove("active-bet");
     betOption.classList.add("active-bet");
     activeBet = betOption;
-
 }
 
 function initializeGame(){
