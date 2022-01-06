@@ -25,8 +25,15 @@ const cashOut = document.getElementById('cashOut');
 // Credits
 let currentCredits = 0;
 
+// Game Ended
+let gameEnded = false;
+
 // Event Listeners  
 spinBtn.addEventListener("click", () => {
+    if (gameEnded) {
+        initializeGame();
+        return;
+    }
     if (currentCredits >= parseInt(activeBet.textContent)) {
         executeSpin();
     }
@@ -39,7 +46,8 @@ document.querySelectorAll('.bets').forEach(item => {
 });
 
 cashOut.addEventListener('click', () => {
-    console.log("CASH OUT !!!")
+    alert(`You have won ${currentCredits} credit(s)!! Have a nice day!`)
+    initializeGame();
 })
 
 // Helper Function
@@ -52,19 +60,22 @@ function updateCredits(amount) {
     creditsDisplay.textContent = amount;
 }
 
+// Cited Array Equals function from https://masteringjs.io/tutorials/fundamentals/compare-arrays
 function arrayEquals(a, b) {
     return Array.isArray(a) && Array.isArray(b) &&
       a.length === b.length &&
       a.every((val, index) => val === b[index]);
   }
 
-  function gameOverCheck() {
-      if (currentCredits < 1) {
-          payoutSchedule.style.display = "none";
-          cashOut.style.display = "none";
-          gameOver.style.display = "block";
-      } 
-  }
+function gameOverCheck() {
+    if (currentCredits < 1) {
+        payoutSchedule.style.display = "none";
+        cashOut.style.display = "none";
+        gameOver.style.display = "block";
+        spinBtn.innerHTML = "Restart"
+        gameEnded = true;
+    }
+}
 
 function calculateScore(results) {
     let multiplyTen = ['elephant', 'lion', 'giraffe'];
@@ -128,7 +139,11 @@ function setAsActiveBet(betOption) {
 }
 
 function initializeGame(){
+    payoutSchedule.style.display = "block";
+    cashOut.style.display = "block";
     gameOver.style.display = "none";
+    spinBtn.innerHTML = "Spin"
+    gameEnded = false;
     updateCredits(50);
     changeSpinnerBackground(spinner1, giraffeImageUrl);
     changeSpinnerBackground(spinner2, giraffeImageUrl);
