@@ -99,7 +99,6 @@ body {
     background-color: #fff;
     border: 2px solid #000;
     height: 75px;
-    font-size: 2em;
 }
 
 /* ==== Out Row Styles ==== */
@@ -149,6 +148,10 @@ body {
 
     #betRow div .bets {
         width: 37%;
+    }
+
+    #cashOut {
+        font-size: 30px;
     }
 }
 
