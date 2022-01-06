@@ -130,7 +130,6 @@ body {
 #cashOut {
     background-color: #999;
     font-size: 1.9em;
-    justify-content: center;
     border: 2px solid #000;
     padding: 3px;
 }
@@ -138,6 +137,18 @@ body {
 #cashOut:hover,
 #cashOut:focus {
     cursor: pointer;
+}
+
+#cashOutModal {
+    display: none;
+    position: absolute;
+    top: 20%;
+    left: 12%;
+    width: 75%;
+    text-align: center;
+    color: #fff;
+    font-size: 3em;
+    background-color: #000;
 }
 
 #payoutSchedule img {
