@@ -124,29 +124,29 @@ function spinAndUpdate() {
     changeSpinnerBackground(spinner1, imageOptions[spinOptions[spin1index]]);
     changeSpinnerBackground(spinner2, imageOptions[spinOptions[spin2index]]);
     changeSpinnerBackground(spinner3, imageOptions[spinOptions[spin3index]]);
-    return spinResult
+    return spinResult;
 }
 
 // A function to rotate the spinners background
-function spinRotation() {
-    let spin = 0;
-    let spinAnimation = setInterval(() => {
-        spin ++;
-        for (let i = 0; i < 5; i++) {
+async function spinRotation() {
+    return new Promise((resolve, reject) => {
+        let spin = 0;
+        let spinAnimation = setInterval(async () => {
+            spin ++;
             spinAndUpdate();
-        }
-        if (spin >= 5) {
-            clearInterval(spinAnimation);
-        }
-    },100)
+            if (spin >= 8) {
+                resolve();
+                clearInterval(spinAnimation);
+            }
+        },100);
+    })
 }
 
-
-function executeSpin() {
+async function executeSpin() {
     let spinResult;
     let winnings = 0;
     updateCredits(currentCredits - parseInt(activeBet.textContent));
-    spinRotation();
+    await spinRotation();
     spinResult = spinAndUpdate();
     winnings = calculateScore(spinResult);
     updateCredits(currentCredits + winnings);
