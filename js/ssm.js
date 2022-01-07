@@ -120,17 +120,33 @@ function spinAndUpdate() {
     let spin1index = Math.floor(Math.random() * (spinOptions.length));
     let spin2index = Math.floor(Math.random() * (spinOptions.length));
     let spin3index = Math.floor(Math.random() * (spinOptions.length));
-    let spinResult = [spinOptions[spin1index], spinOptions[spin2index], spinOptions[spin3index]]
+    let spinResult = [spinOptions[spin1index], spinOptions[spin2index], spinOptions[spin3index]];
     changeSpinnerBackground(spinner1, imageOptions[spinOptions[spin1index]]);
     changeSpinnerBackground(spinner2, imageOptions[spinOptions[spin2index]]);
     changeSpinnerBackground(spinner3, imageOptions[spinOptions[spin3index]]);
     return spinResult
 }
 
+// A function to rotate the spinners background
+function spinRotation() {
+    let spin = 0;
+    let spinAnimation = setInterval(() => {
+        spin ++;
+        for (let i = 0; i < 5; i++) {
+            spinAndUpdate();
+        }
+        if (spin >= 5) {
+            clearInterval(spinAnimation);
+        }
+    },100)
+}
+
+
 function executeSpin() {
     let spinResult;
     let winnings = 0;
     updateCredits(currentCredits - parseInt(activeBet.textContent));
+    spinRotation();
     spinResult = spinAndUpdate();
     winnings = calculateScore(spinResult);
     updateCredits(currentCredits + winnings);
