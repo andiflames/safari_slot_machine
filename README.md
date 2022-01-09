@@ -22,10 +22,12 @@ This project is made by using HTML, CSS, and JavaScript
 
 #### Rules of the Game
 - Player starts with 50 credits.
-- First player places a bet by clicking on either the 1, 2, 5, and 10 box, underneath the spinners. The active bet's background will be a goldish color. **Note: the active bet is, automatically, set to 1**.
+- First, place a bet by clicking on either the 1, 2, 5, and 10 box, below the spinners. The active bet's background will be a goldish color. ***Note: the active bet is, automatically, set to 1***.
 - Then push the Spin button
-- The spinners will then rotate and stop on a set of safari animal images.
-- Depending on the spinners combination, player will either loss the amound that was betted or win back the amount placed by multplying the bet shown in the [Payout Schedule](./images/payout_schedule.png).
+- The spinners will rotate and stop on a set of safari animal images.
+- Depending on the spinners combination, player will either loss the amound that was betted or win back the amount placed by multplying the bet shown in the [Payout Schedule image](./images/payout_schedule.png).
+- Just continue to spin until Game is Over, by lossing all credits; or click the Cash Out button that cashes out the credits. ***Note: Spin button will change to a Reset button***
+- If player wants to start over once Game Over or Cash Out, just click on Restart button.
 
 ## Next Steps
 - Add sound effects to the Spin button (onced clicked) and spinners (when rotating).
