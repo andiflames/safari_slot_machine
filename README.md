@@ -17,8 +17,8 @@ be able to make bets and spin to either win big, or lose it all!
 This project is made by using HTML, CSS, and JavaScript
 
 ## Getting Started
-- To play the game click ![Lets go to the GAME!](https://andiflames.github.io/safari_slot_machine/) 
-- Fork the repo, then load the index.html page in a browser.
+- To play the game click [Lets go to the GAME!](https://andiflames.github.io/safari_slot_machine/) 
+- Fork and clone the repo, then load the html page in a browser.
 
 ## Contribution
 This is a school project, so no external contributions are needed
