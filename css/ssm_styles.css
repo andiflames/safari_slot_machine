@@ -48,6 +48,7 @@ body {
     width: 75%;
     background-color: #C2B280;
 }
+
 .spinner {
     width: 32%;
     display: inline-block;
@@ -108,7 +109,7 @@ body {
     background-color: #fff;
     border: 2px solid #000;
     height: 75px;
-    padding-top: 20px;
+    padding-top: 18px;
     font-size: 1.2em;
 }
 
@@ -143,13 +144,13 @@ body {
 #cashOutModal {
     display: none;
     position: absolute;
-    top: 20%;
+    top: 17%;
     left: 12%;
     width: 75%;
     text-align: center;
     color: #fff;
     font-size: 3em;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.8);
     text-shadow: 2.5px 3px #000;
 }
 
@@ -190,7 +191,12 @@ body {
     }
 
     #spin button {
-        font-size: 2em;
+        font-size: 1.5em;
+    }
+
+    #results {
+        font-size: 1em;
+        margin-left: 5px;
     }
 
     #cashOut {
