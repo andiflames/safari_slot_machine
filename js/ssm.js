@@ -108,10 +108,10 @@ function calculateScore(results) {
 // A function that updates the results area with the winnings won or credits lost in text string concatenation.
 function updateResultsArea(winnings) {
     if (winnings > 0) {
-        resultsArea.textContent = `You've won ${winnings} credit(s)!`
+        resultsArea.textContent = `You've won ${winnings} credit(s)!`;
     }
     else {
-        resultsArea.textContent = `You've lost your bet of ${activeBet.textContent} credit(s).`
+        resultsArea.textContent = `You've lost your bet of ${activeBet.textContent} credit(s).`;
     }
 }
 
@@ -127,7 +127,8 @@ function spinAndUpdate() {
     return spinResult;
 }
 
-// A function to rotate the spinners background
+// An async function that rotates the spinners background that gives a delay to the spinAndUpdate function 
+// until the resolve has completed.
 async function spinRotation() {
     return new Promise((resolve, reject) => {
         let spin = 0;
